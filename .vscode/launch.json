@@ -1,0 +1,51 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "compounds": [
+    {
+      "name": "Debug Order + Gateway",
+      "configurations": ["Debug order Launch Package", "Debug gateway Launch Package"]
+    },
+    {
+      "name": "Debug Asset + Gateway",
+      "configurations": ["Debug asset Launch Package", "Debug gateway Launch Package"]
+    },
+    {
+      "name": "Debug All Services",
+      "configurations": ["Debug order Launch Package", "Debug asset Launch Package", "Debug gateway Launch Package"]
+    }
+  ],
+    "configurations": [
+        {
+            "name": "Debug order Launch Package",
+            "type": "go",
+            "request": "launch",
+            "mode": "auto",
+            "program": "${workspaceFolder}/crypto-order-service/cmd",
+            "envFile": "${workspaceFolder}/crypto-order-service/.env",
+            "cwd": "${workspaceFolder}/crypto-order-service"
+        },
+        {
+            "name": "Debug asset Launch Package",
+            "type": "go",
+            "request": "launch",
+            "mode": "auto",
+            "program": "${workspaceFolder}/crypto-asset-service/cmd",
+            "envFile": "${workspaceFolder}/crypto-asset-service/.env",
+            "cwd": "${workspaceFolder}/crypto-asset-service"
+        },
+         {
+            "name": "Debug gateway Launch Package",
+            "type": "go",
+            "request": "launch",
+            "mode": "auto",
+            "program": "${workspaceFolder}/crypto-api-gateway/cmd",
+            "envFile": "${workspaceFolder}/crypto-api-gateway/.env",
+            "cwd": "${workspaceFolder}/crypto-api-gateway"
+        }
+    ]
+}
+
+//"${fileDirname}"

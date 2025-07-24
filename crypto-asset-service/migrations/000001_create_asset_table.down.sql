@@ -1,0 +1,6 @@
+BEGIN;
+
+DROP TABLE IF EXISTS assets;
+DROP TYPE IF EXISTS asset_type;
+
+COMMIT;

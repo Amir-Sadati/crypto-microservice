@@ -1,0 +1,25 @@
+// crypto-proto/order/order.proto
+syntax = "proto3";
+
+package order;
+
+option go_package = "github.com/Amir-Sadati/crypto-microservice/crypto-proto/order;orderpb";
+
+service OrderService {
+    rpc CreateOrder(CreateOrderRequest) returns (CreateOrderResponse);
+
+    //**********************Asset Service**********************//
+    //rpc GetAssetByID(GetAssetByIDRequest) returns (GetAssetByIDResponse);
+}
+
+
+
+message CreateOrderRequest {
+  string user_id = 1;
+  int32 asset_id = 2;
+  string order_type = 3;
+  string amount = 4; // Decimal as string
+  string price = 5;  // Decimal as string
+}
+
+message CreateOrderResponse { }

@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package asset;
+
+option go_package = "github.com/Amir-Sadati/crypto-microservice/crypto-proto/asset;assetpb";
+
+service AssetService {
+    rpc CreateAsset(CreateAssetRequest) returns (CreateAssetResponse);
+}
+
+// Enum for asset type
+enum AssetType {
+  UNSPECIFIED = 0;
+  COIN = 1;
+  TOKEN = 2;
+  FIAT = 3;
+}
+
+message CreateAssetRequest {
+  string symbol = 1;
+  string name = 2;
+  AssetType type = 3;
+  int32 decimals = 4;
+  bool is_active = 5;
+}
+
+
+message CreateAssetResponse {
+}
+
+
+
